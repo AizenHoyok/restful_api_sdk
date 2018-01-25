@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlwansdk.dao.GameRoleMapper">
+  <resultMap id="BaseResultMap" type="com.xlwansdk.pojo.db.GameRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="inv" jdbcType="INTEGER" property="inv" />
+    <result column="invGame" jdbcType="VARCHAR" property="invgame" />
+    <result column="server" jdbcType="VARCHAR" property="server" />
+    <result column="regTime" jdbcType="INTEGER" property="regtime" />
+    <result column="regIp" jdbcType="VARCHAR" property="regip" />
+    <result column="lastTime" jdbcType="INTEGER" property="lasttime" />
+    <result column="lastExitTime" jdbcType="INTEGER" property="lastexittime" />
+    <result column="lastIp" jdbcType="VARCHAR" property="lastip" />
+    <result column="bgroup" jdbcType="INTEGER" property="bgroup" />
+    <result column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="nick" jdbcType="VARCHAR" property="nick" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+  </resultMap>
+  <resultMap id="BaseResultMap" type="com.xlwansdk.pojo.db.GameRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="inv" jdbcType="INTEGER" property="inv" />
+    <result column="invGame" jdbcType="VARCHAR" property="invgame" />
+    <result column="server" jdbcType="VARCHAR" property="server" />
+    <result column="regTime" jdbcType="INTEGER" property="regtime" />
+    <result column="regIp" jdbcType="VARCHAR" property="regip" />
+    <result column="lastTime" jdbcType="INTEGER" property="lasttime" />
+    <result column="lastExitTime" jdbcType="INTEGER" property="lastexittime" />
+    <result column="lastIp" jdbcType="VARCHAR" property="lastip" />
+    <result column="bgroup" jdbcType="INTEGER" property="bgroup" />
+    <result column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="nick" jdbcType="VARCHAR" property="nick" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+  </resultMap>
+</mapper>

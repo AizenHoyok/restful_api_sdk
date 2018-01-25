@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlwansdk.dao.UserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.xlwansdk.pojo.db.UserRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="u_id" jdbcType="INTEGER" property="uId" />
+    <id column="r_id" jdbcType="INTEGER" property="rId" />
+  </resultMap>
+</mapper>

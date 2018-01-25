@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xlwansdk.dao.MemberMapper">
+  <resultMap id="BaseResultMap" type="com.xlwansdk.pojo.db.Member">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="account" jdbcType="VARCHAR" property="account" />
+    <result column="pwd" jdbcType="CHAR" property="pwd" />
+    <result column="inv" jdbcType="INTEGER" property="inv" />
+    <result column="invGame" jdbcType="VARCHAR" property="invgame" />
+    <result column="regTime" jdbcType="VARCHAR" property="regtime" />
+    <result column="regIp" jdbcType="VARCHAR" property="regip" />
+    <result column="lastTime" jdbcType="VARCHAR" property="lasttime" />
+    <result column="lastIp" jdbcType="VARCHAR" property="lastip" />
+    <result column="bgroup" jdbcType="INTEGER" property="bgroup" />
+    <result column="bid" jdbcType="INTEGER" property="bid" />
+    <result column="money" jdbcType="DECIMAL" property="money" />
+    <result column="mobile" jdbcType="CHAR" property="mobile" />
+    <result column="mail" jdbcType="CHAR" property="mail" />
+    <result column="card" jdbcType="CHAR" property="card" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="device" jdbcType="CHAR" property="device" />
+    <result column="tourist" jdbcType="BIT" property="tourist" />
+  </resultMap>
+
+
+    <select id="login" parameterType="com.xlwansdk.pojo.qo.MemberQo" resultType="com.xlwansdk.pojo.db.Member">
+    SELECT * FROM tab_member WHERE account = #{account} AND pwd = #{password}
+  </select>
+
+    <insert id="register" keyProperty="member.id" parameterType="com.xlwansdk.pojo.db.Member" useGeneratedKeys="true">
+    INSERT INTO tab_member(
+    inv, invGame, regTime, regIp, lastTime,
+    lastIp, bgroup, bid, money, mobile, pwd,
+    mail, card, name, device, tourist, account)
+    VALUES (
+    #{member.inv},
+    #{member.invgame},
+    #{member.regtime},
+    #{member.regip},
+    #{member.lasttime},
+    #{member.lastip},
+    #{member.bgroup},
+    #{member.bid},
+    #{member.money},
+    #{member.mobile},
+    #{member.pwd},
+    #{member.mail},
+    #{member.card},
+    #{member.name},
+    #{member.device},
+    #{member.tourist},
+    #{member.account}
+    )
+  </insert>
+    
+    <select id="getCount" resultType="int">
+        SELECT MAX(id) FROM tab_member
+    </select>
+    
+    <select id="is_real_name" parameterType="string" resultType="com.xlwansdk.pojo.db.Member">
+        SELECT id,account,name,card
+        FROM tab_member WHERE account=#{account} and card IS NOT NULL and name IS NOT NULL
+    </select>
+    
+    <update id="varify_real_name" parameterType="string">
+        UPDATE tab_member SET name = #{name} , card = #{card} WHERE account = #{account}
+    </update>
+
+    <select id="getId" parameterType="string" resultType="com.xlwansdk.pojo.db.Member">
+        SELECT id,account
+        FROM tab_member WHERE account=#{account}
+    </select>
+</mapper>
